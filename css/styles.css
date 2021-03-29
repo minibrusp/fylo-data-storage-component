@@ -10,7 +10,10 @@
 html {
    box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
    box-sizing: inherit;
 }
 
@@ -25,7 +28,7 @@ main {
    background-image: url(../images/bg-mobile.png);
    background-size: cover;
 
-   
+
 }
 
 .container {
@@ -40,12 +43,12 @@ main {
    transform: translateY(-40px);
 }
 
-/* top */ 
+/* top */
 .top {
    border-radius: 15px 100px 15px 15px;
    min-width: 330px;
    animation: updown 1s ease-in-out forwards,
-               fadeIn 1.5s ease-in-out forwards;
+      fadeIn 1.5s ease-in-out forwards;
 }
 
 .top .top-bot {
@@ -58,21 +61,25 @@ main {
    margin-right: 15px;
    border-radius: 10px;
 }
-.top-bot img:nth-of-type(1){
+
+.top-bot img:nth-of-type(1) {
    padding: 10px 11px;
    height: 48px;
 }
-.top-bot img:nth-of-type(2){
+
+.top-bot img:nth-of-type(2) {
    padding: 12px 11px;
    height: 48px;
 }
-.top-bot img:nth-of-type(3){
+
+.top-bot img:nth-of-type(3) {
    padding: 15px 11px;
    height: 48px;
 }
 
 /* top&bot */
-.top, .bot {
+.top,
+.bot {
    background-color: var(--dark-blue);
    padding: 40px;
    margin-bottom: 20px;
@@ -82,14 +89,14 @@ main {
 .bot {
    border-radius: 15px;
    animation: downup 1s ease-in-out forwards,
-   fadeIn 1.5s ease-in-out forwards;
+      fadeIn 1.5s ease-in-out forwards;
 }
 
-.bot-top p{
+.bot-top p {
    color: var(--pale-blue);
 }
 
-.bot-top p > span {
+.bot-top p>span {
    color: white;
    font-weight: 700;
 }
@@ -102,10 +109,16 @@ main {
 }
 
 /* bot - cloud  */
-.bot-cloud {
+/* .bot-cloud {
    animation: leftright 1.5s ease-in-out .6s forwards,
                fadeIn 3.5s ease-in-out forwards;
+} */
+
+.bot-cloud {
+   animation: fadeIn 3s ease-in-out .3s forwards;
 }
+
+
 
 .bot-cloud p {
    display: flex;
@@ -124,6 +137,7 @@ main {
    font-size: 2.041rem;
    margin-right: 10px;
 }
+
 .bot-cloud small {
    color: gray;
    font-weight: 700;
@@ -140,18 +154,21 @@ main {
    display: flex;
    margin: 0 5px;
 }
-.bot-mid > span {
+
+.bot-mid>span {
    min-width: 70%;
-   background: linear-gradient(
-      270deg,   
-      hsl(335, 100%, 65%) 0%, 
-      hsl(6, 100%, 80%) 100%
-   );
+   background: linear-gradient(270deg,
+         hsl(335, 100%, 65%) 0%,
+         hsl(6, 100%, 80%) 100%);
    border-radius: 30px;
    position: relative;
    margin: 2px;
+   transform-origin: left;
+   animation: fadeIn 5s forwards .1s,
+      smallToLargeX 5s forwards .1s;
 }
-.bot-mid span > span {
+
+.bot-mid span>span {
    min-width: 13px;
    min-height: 13px;
    border-radius: 50%;
@@ -163,14 +180,14 @@ main {
    margin-left: 90%;
 }
 
-/* footer */ 
+/* footer */
 footer {
    position: absolute;
    bottom: 5px;
    width: 100%;
 }
 
-/* queries */ 
+/* queries */
 @media screen and (min-width: 900px) {
    main {
       background: hsl(229, 57%, 11%);
@@ -180,6 +197,7 @@ footer {
       background-repeat: no-repeat;
 
    }
+
    .grid-container {
       display: flex;
       flex-direction: row;
@@ -196,13 +214,14 @@ footer {
    }
 
    .bot-cloud {
-      animation: leftright 2s ease-in-out .5s forwards,
-                  fadeIn 3s ease-in-out forwards;
+      animation: fadeIn 3s ease-in-out forwards;
    }
+
    .bot-cloud p {
       transform: translateX(261px) translateY(-147px);
       padding: 10px 18px;
    }
+
    .bot-cloud::after {
       content: ' \25BC';
       font-size: 50px;
@@ -215,11 +234,22 @@ footer {
 
 /* animations keyframes */
 
+@keyframes smallToLargeX {
+   0% {
+      transform: scaleX(0);
+   }
+
+   100% {
+      transform: scalex(1);
+   }
+}
+
 
 @keyframes updown {
    0% {
       transform: translateY(-350px);
    }
+
    100% {
       transform: translateY(0);
    }
@@ -229,6 +259,7 @@ footer {
    0% {
       transform: translateY(350px);
    }
+
    100% {
       transform: translateY(0);
    }
@@ -238,6 +269,7 @@ footer {
    0% {
       transform: translateX(-300px);
    }
+
    100% {
       transform: translateX(0);
    }
@@ -247,6 +279,7 @@ footer {
    0% {
       transform: translateX(250px);
    }
+
    100% {
       transform: translateX(0);
    }
@@ -256,6 +289,7 @@ footer {
    0% {
       opacity: 0;
    }
+
    100% {
       opacity: 1;
    }
